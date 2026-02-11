@@ -2,13 +2,15 @@
 
 int main () {
     int i = 1, option;
+    int movimentoCavalo;
 
     do {
         printf ("Selecione uma opçao para movimentar uma peça de xadrez.\n");
         printf ("\n1. Torre move 5 casas para direita.\n");
         printf ("2. Bispo move 5 casa diagonal cima, direita.\n");
         printf ("3. Rainha move 4 casas para esquerda.\n");
-        printf ("4. Sair.\n");
+        printf ("4. Cavalo move duas casas para cima e uma para direita.\n");
+        printf ("5. Sair.\n");
         printf ("\n");
         printf ("Digite uma opção: ");
         scanf ("%d", &option);
@@ -40,19 +42,30 @@ int main () {
             printf(".:: Movimentação Rainha ::.\n");
             do { 
                 printf ("Esquerda.\n");
-                i++;
-                printf ("Rainha moveu 4 casas para esuqerda.\n");
+                i++;               
             } while (i <= 4);
+            printf ("Rainha moveu 4 casas para esuqerda.\n");
             break;
         case 4:
-            printf ("Saindo do jogo...\n");
+            for (movimentoCavalo = 0; movimentoCavalo < 1; movimentoCavalo++)
+            {
+                for (int i = 0; i < 2; i++)
+                {
+                    printf ("Cima\n");
+                }               
+                printf ("Direita\n");
+            }
+            printf ("O cavalo moveu duas casas para cima e uma para a direita.\n");            
+            break;
+        case 5:
+            printf ("Saindo do jogo...");
             break;
         default:
             printf ("Opção inválida, tente novamente.\n");
             break;
         }
         printf("\n");
-    } while (option != 4);
+    } while (option != 5);
 
     return 0;
 }
